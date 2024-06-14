@@ -1,0 +1,19 @@
+<section class="mb-5">
+  <div class="container">
+    <h1 class="mb-5 text-center">Наши чайные коллекции</h1>
+    <div class="products">
+      <div class="product-item" *ngFor="let product of products">
+        <div class="card">
+          <a class="product-image" href="{{product.image}}">
+            <img src="{{product.image}}" class="card-img-top" alt="Tea">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">{{product.title}}</h5>
+            <p class="card-text">{{product.description | limitSymbols}}</p>
+            <a href="#" class="btn btn-primary ps-5 pe-5" [routerLink]="['/catalog', product.id]">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

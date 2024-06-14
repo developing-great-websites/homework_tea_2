@@ -1,0 +1,72 @@
+<div>
+  <section class="main mb-lg-5">
+    <div class="container mx-auto position-relative">
+      <div class="tea-slide">
+        <div>
+          <img src="assets/images/main_image1.png" class="w-100" alt="Tea">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="questions">
+    <div class="container-lg">
+      <div class="col-8 m-auto">
+        <h2 class="mb-5 text-center">Ответы на часто задаваемые вопросы</h2>
+        <div id="accordion">
+          <h3 class="text-bg-primary p-4 border-0 rounded mb-3 action position-relative">Собираете ли вы
+            подарочные боксы?</h3>
+          <div>
+            <p>
+              Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+            </p>
+          </div>
+          <h3 class="text-bg-primary p-4 border-0 rounded mb-3 action position-relative">Сколько у вас
+            разновидностей чая?</h3>
+          <div>
+            <p>
+              У нас более 20 разновидностей чая на любой вкус!
+            </p>
+          </div>
+          <h3 class="text-bg-primary p-4 border-0 rounded mb-3 action position-relative">В какой срок
+            осуществляется доставка?</h3>
+          <div>
+            <p>
+              Доставка товара осуществляется в максимально короткие сроки, не превышающие 2 недели с момента
+              оформления заказа.
+            </p>
+          </div>
+          <h3 class="text-bg-primary p-4 border-0 rounded mb-3 action position-relative">У вас обновляется
+            ассортимент?</h3>
+          <div>
+            <p>
+              Наш ассортимент обновляется на постоянной основе не реже 1 раза в три месяца.
+            </p>
+          </div>
+          <h3 class="text-bg-primary p-4 border-0 rounded mb-3 action position-relative">Какого объема у вас пачки
+            чая?</h3>
+          <div>
+            <p>
+              Объемы пачек чая стандартные: 50гр, 100гр, 200гр.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="modal fade" id="popup">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fs-3 text-center text-primary">Посмотрите наши чайные коллекции</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-primary" data-bs-dismiss="modal" [routerLink]="'/catalog'">Смотреть</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

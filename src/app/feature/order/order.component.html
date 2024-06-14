@@ -1,0 +1,102 @@
+<section class="order m-auto" *ngIf="!visibleForm">
+  <div class="container">
+    <h2 class="mb-5 text-center mt-5">Сделать заказ</h2>
+    <div class="row g-3">
+      <form class="col col-md-6 mx-auto wow animate__animated animate__backInUp order-input" [formGroup]="saveOrderForm">
+        <div class="row">
+          <div class="mb-3">
+            <label for="inputProduct" class="form-label">Товар</label>
+            <input type="text" class="form-control"
+                   formControlName ="product"
+                   id="inputProduct" ng-disabled="disable">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <label for="inputName" [class]="{'text-danger': name?.invalid && (name?.dirty || name?.touched)}" class="form-label">Имя</label>
+            <input type="text" class="form-control"
+                   formControlName ="name"
+                   [class]="{'border-danger': name?.invalid && (name?.dirty || name?.touched)}"
+                   id="inputName">
+            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+              <div class="text-danger" *ngIf="name?.errors?.['required']">Name is required.</div>
+              <div class="text-danger" *ngIf="name?.errors?.['pattern']">Name is incorrect.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label for="inputLastName" [class]="{'text-danger': lastName?.invalid && (lastName?.dirty || lastName?.touched)}" class="form-label">Фамилия</label>
+            <input type="text" class="form-control"
+                   formControlName ="last_name"
+                   [class]="{'border-danger': lastName?.invalid && (lastName?.dirty || lastName?.touched)}"
+                   id="inputLastName">
+            <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+              <div class="text-danger" *ngIf="lastName?.errors?.['required']">Lastname is required.</div>
+              <div class="text-danger" *ngIf="lastName?.errors?.['pattern']">Lastname is incorrect.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label for="inputPhone" [class]="{'text-danger': phone?.invalid && (phone?.dirty || phone?.touched)}" class="form-label">Телефон</label>
+            <input type="text" class="form-control"
+                   formControlName ="phone"
+                   [class]="{'border-danger': phone?.invalid && (phone?.dirty || phone?.touched)}"
+                   id="inputPhone">
+            <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+              <div class="text-danger" *ngIf="phone?.errors?.['required']">Phone is required.</div>
+              <div class="text-danger" *ngIf="phone?.errors?.['pattern']">Phone is incorrect.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 col-md-6">
+            <label for="inputCountry" class="form-label">Страна</label>
+            <input type="text" class="form-control"
+                   formControlName ="country"
+                   id="inputCountry">
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="inputIndex" class="form-label">Индекс</label>
+            <input type="text" class="form-control"
+                   formControlName ="zip"
+                   id="inputIndex">
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3">
+            <label for="inputAddress" [class]="{'text-danger': address?.invalid && (address?.dirty || address?.touched)}" class="form-label" class="form-label">Адрес</label>
+            <input type="text" class="form-control"
+                   formControlName ="address"
+                   [class]="{'border-danger': address?.invalid && (address?.dirty || address?.touched)}"
+                   id="inputAddress">
+            <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+              <div class="text-danger" *ngIf="address?.errors?.['required']">Address is required.</div>
+              <div class="text-danger" *ngIf="address?.errors?.['pattern']">Address is incorrect.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3">
+            <label for="inputСomment" class="form-label">Комментарий к заказу</label>
+            <textarea type="text" class="form-control"
+                      formControlName ="comment"
+                      id="inputСomment"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <button class="btn btn-primary" id="btnSend" (click)="saveOrder()">Отправить</button>
+            <div>
+              <div class="text-danger" *ngIf="!visibleText">Произошла ошибка. Попробуйте еще раз.</div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+<div class="text-center fs-3" *ngIf="!visibleTextSuccess">
+  Спасибо за заказ!
+</div>

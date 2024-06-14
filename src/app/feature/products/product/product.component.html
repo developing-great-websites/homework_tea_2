@@ -1,0 +1,13 @@
+<div class="product d-flex flex-column text-center">
+  <div class="container">
+    <a class="product-image" href="{{product.image}}">
+      <img src="{{product.image}}" alt="Tea">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title fs-4 mb-4">{{product.title}}</h5>
+      <p class="card-text mb-4">{{product.description}}</p>
+      <p class="card-price mb-4 fs-4">Цена: {{product.price}} руб.</p>
+      <a href="#" class="btn btn-price btn-primary ps-5 pe-5" [routerLink]="['/order', product.title]">Купить</a>
+    </div>
+  </div>
+</div>

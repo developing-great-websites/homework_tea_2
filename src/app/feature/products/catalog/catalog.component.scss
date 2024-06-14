@@ -1,0 +1,22 @@
+.products {
+  display: flex;
+  margin-top: 35px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-item > * {
+  display: block;
+  margin: 10px;
+}
+
+.card-body {
+  flex-grow: 1;
+}
