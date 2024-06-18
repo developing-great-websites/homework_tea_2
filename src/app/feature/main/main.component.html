@@ -53,20 +53,19 @@
       </div>
     </div>
   </section>
-  <div class="modal fade" id="popup">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header border-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="fs-3 text-center text-primary">Посмотрите наши чайные коллекции</p>
-        </div>
-        <div class="modal-footer">
-          <a type="button" class="btn btn-primary" data-bs-dismiss="modal" [routerLink]="'/catalog'">Смотреть</a>
-        </div>
+  <ng-template #modal>
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p class="fs-3 text-center text-primary">Посмотрите наши чайные коллекции</p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-primary" data-bs-dismiss="modal" [routerLink]="'/catalog'">Смотреть</a>
       </div>
     </div>
-  </div>
+  </ng-template>
 </div>
+
 
